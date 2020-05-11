@@ -11,16 +11,16 @@ services :
   # CONTAINER - mariadb :
   # https://hub.docker.com/_/mariadb
   db:
-    image: mariadb:latest
-    container_name: wp_mariadb
-    restart: always
+    image: 'mariadb:latest'
+    container_name: 'wp_mariadb'
+    restart: 'always'
     volumes:
-      - db_data:/var/lib/mysql
+      - /mnt/stockage/db_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: 'Ch@y@n91300'
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+      MYSQL_PASSWORD: 'chayan91300'
     networks:
       - wp
 
@@ -29,14 +29,14 @@ services :
   wordpress:
     depends_on:
       - db
-    image: wordpress:latest
-    restart: always
-    container_name: wp_wordpress
-    restart: always
+    image: 'wordpress:latest'
+    restart: 'always'
+    container_name: 'wp_wordpress'
+    restart: 'always'
     environment:
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_USER: 'wordpress'
+      WORDPRESS_DB_PASSWORD: 'chayan91300'
     working_dir: /var/www/html
     volumes:
       - /mnt/stockage/wordpress:/var/www/html
