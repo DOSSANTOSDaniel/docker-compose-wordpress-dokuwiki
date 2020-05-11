@@ -46,19 +46,25 @@ services :
     networks:
       - wp
 
-  # CONTAINER - dokuwikitos :
-  # à build ...
+  # CONTAINER - Bitnami/Dokuwiki :
   dokuwiki:
-    image: dokuwikitos
+    image: 'bitnami/dokuwiki:latest'
     container_name: wiki
     restart: always
     ports:
-      - "8080:80"
+      - "4343:443"
+    volumes:
+      - '/mnt/stockage/dokuwiki_data:/bitnami'
+    environment:
+      DOCKER_CONTENT_TRUST: 1
+      DOKUWIKI_USERNAME: 'daniel'
+      DOKUWIKI_FULL_NAME: 'dos santos'
+      DOKUWIKI_PASSWORD: 'password'
+      DOKUWIKI_EMAIL: 'danielitto91@gmail.com'
+      DOKUWIKI_WIKI_NAME: 'Super Wiki'
+      PHP_MEMORY_LIMIT: '2000M'
     networks:
       - wp
 
 networks:
   wp:
-
-volumes:
-  db_data:
