@@ -29,8 +29,8 @@ version: "3"
 
 services :
 
-  # CONTAINER - MYSQL :
-  # https://hub.docker.com/_/mysql
+  # CONTAINER - mariadb :
+  # https://hub.docker.com/_/mariadb
   db:
     image: mariadb:latest
     container_name: wp_mariadb
@@ -63,8 +63,8 @@ services :
     networks:
       - wp
 
-  # CONTAINER - PHPMYADMIN :
-  # https://hub.docker.com/r/phpmyadmin/phpmyadmin
+  # CONTAINER - dokuwikitos :
+  # à build ...
   dokuwiki:
     image: dokuwikitos
     container_name: wiki
