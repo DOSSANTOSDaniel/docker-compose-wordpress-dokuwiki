@@ -17,10 +17,10 @@ services :
     volumes:
       - /mnt/stockage/db_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: 'Ch@y@n91300'
+      MYSQL_ROOT_PASSWORD: '********'
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
-      MYSQL_PASSWORD: 'chayan91300'
+      MYSQL_PASSWORD: '********'
     networks:
       - wp
 
@@ -36,7 +36,7 @@ services :
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: 'wordpress'
-      WORDPRESS_DB_PASSWORD: 'chayan91300'
+      WORDPRESS_DB_PASSWORD: '********'
     working_dir: /var/www/html
     volumes:
       - /mnt/stockage/wordpress:/var/www/html
