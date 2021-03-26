@@ -60,7 +60,7 @@ services :
       DOKUWIKI_USERNAME: 'daniel'
       DOKUWIKI_FULL_NAME: 'dos santos'
       DOKUWIKI_PASSWORD: 'password'
-      DOKUWIKI_EMAIL: 'danielitto91@gmail.com'
+      DOKUWIKI_EMAIL: '******@gmail.com'
       DOKUWIKI_WIKI_NAME: 'Super Wiki'
       PHP_MEMORY_LIMIT: '2000M'
     networks:
